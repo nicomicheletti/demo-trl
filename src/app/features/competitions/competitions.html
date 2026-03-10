@@ -1,0 +1,126 @@
+<section class="competition-hero">
+    <div class="container hero-grid">
+        <div class="hero-main">
+        <span class="eyebrow">Competencias</span>
+        <h1>{{ competitionTitle }}</h1>
+        <p class="subtitle">{{ competitionSubtitle }}</p>
+        <p class="description">
+            Seguí la competencia principal del TRL con posiciones, fixture,
+            resultados y estadísticas en una sola pantalla.
+        </p>
+        </div>
+
+        <div class="hero-stats-card">
+        <h2>Resumen rápido</h2>
+
+        <div class="stats-grid">
+            <div class="stat-box" *ngFor="let stat of quickStats">
+            <span class="stat-value">{{ stat.value }}</span>
+            <span class="stat-label">{{ stat.label }}</span>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="page-section">
+    <div class="container content-grid">
+        <div class="main-column">
+        <article class="panel">
+            <div class="panel-header">
+            <h2>Tabla de posiciones</h2>
+            <span class="panel-badge">{{ competitionTitle }}</span>
+            </div>
+
+            <div class="table-scroll">
+            <table class="standings-table">
+                <thead>
+                <tr>
+                    <th>Pos</th>
+                    <th>Club</th>
+                    <th>PJ</th>
+                    <th>PG</th>
+                    <th>PE</th>
+                    <th>PP</th>
+                    <th>Bonus</th>
+                    <th>Pts</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr *ngFor="let row of standings">
+                    <td class="position-cell">{{ row.position }}</td>
+                    <td class="team-cell">{{ row.team }}</td>
+                    <td>{{ row.played }}</td>
+                    <td>{{ row.won }}</td>
+                    <td>{{ row.drawn }}</td>
+                    <td>{{ row.lost }}</td>
+                    <td>{{ row.bonus }}</td>
+                    <td class="points-cell">{{ row.points }}</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </article>
+
+        <article class="panel">
+            <div class="panel-header">
+            <h2>Resultados recientes</h2>
+            <span class="panel-badge">Fecha 1</span>
+            </div>
+
+            <div class="match-list">
+            <div class="match-card result" *ngFor="let match of recentResults">
+                <div class="match-top">
+                <span class="match-label">{{ match.label }}</span>
+                <span class="match-status">{{ match.status }}</span>
+                </div>
+
+                <div class="score-result">
+                <div class="team-result">
+                    <strong>{{ match.homeTeam }}</strong>
+                    <span>{{ match.homeScore }}</span>
+                </div>
+
+                <div class="team-result">
+                    <strong>{{ match.awayTeam }}</strong>
+                    <span>{{ match.awayScore }}</span>
+                </div>
+                </div>
+
+                <p class="match-date">{{ match.date }}</p>
+            </div>
+            </div>
+        </article>
+        </div>
+
+        <aside class="side-column">
+        <article class="panel">
+            <div class="panel-header">
+            <h2>Próximos partidos</h2>
+            <span class="panel-badge">Agenda</span>
+            </div>
+
+            <div class="side-match-list">
+            <div class="side-match-card" *ngFor="let match of upcomingMatches">
+                <span class="match-label">{{ match.label }}</span>
+                <h3>{{ match.homeTeam }} vs {{ match.awayTeam }}</h3>
+                <p>{{ match.date }}</p>
+                <span class="upcoming-status">{{ match.status }}</span>
+            </div>
+            </div>
+        </article>
+
+        <article class="panel dark-panel">
+            <div class="panel-header">
+            <h2>Sobre el torneo</h2>
+            </div>
+
+            <p>
+            El Top 10 representa la máxima expresión competitiva del rugby regional
+            del Litoral, con los clubes más destacados de Rosario, Santa Fe y Entre Ríos.
+            </p>
+        </article>
+        </aside>
+    </div>
+</section>

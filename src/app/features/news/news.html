@@ -1,0 +1,58 @@
+<section class="news-hero">
+    <div class="container">
+        <span class="eyebrow">Noticias</span>
+        <h1>La actualidad del Torneo Regional del Litoral</h1>
+        <p>
+        Un espacio para comunicar novedades, historias, protagonistas, cobertura institucional
+        y toda la identidad que rodea al TRL.
+        </p>
+    </div>
+    </section>
+
+    <section class="page-section">
+    <div class="container news-layout">
+
+        <article class="featured-news-card">
+        <div class="featured-image">Noticia principal</div>
+
+        <div class="featured-body">
+            <span class="news-category">{{ featuredNews.category }}</span>
+            <h2>{{ featuredNews.title }}</h2>
+            <p>{{ featuredNews.excerpt }}</p>
+            <span class="news-date">{{ featuredNews.date }}</span>
+        </div>
+        </article>
+
+        <div class="secondary-column">
+        <article class="secondary-news-card" *ngFor="let item of secondaryNews">
+            <div class="secondary-image">Imagen</div>
+
+            <div class="secondary-body">
+            <span class="news-category">{{ item.category }}</span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.excerpt }}</p>
+            <span class="news-date">{{ item.date }}</span>
+            </div>
+        </article>
+        </div>
+
+    </div>
+    </section>
+
+    <section class="page-section light-section">
+    <div class="container">
+        <div class="section-heading">
+        <h2>Últimas novedades</h2>
+        <p>Noticias breves y actualizaciones del ecosistema del torneo.</p>
+        </div>
+
+        <div class="latest-grid">
+        <article class="latest-card" *ngFor="let item of latestNews">
+            <span class="news-category">{{ item.category }}</span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.excerpt }}</p>
+            <span class="news-date">{{ item.date }}</span>
+        </article>
+        </div>
+    </div>
+</section>

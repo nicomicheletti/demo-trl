@@ -1,0 +1,57 @@
+<section class="standings-hero">
+    <div class="container">
+        <span class="eyebrow">Tabla de posiciones</span>
+        <h1>Posiciones del {{ competition }}</h1>
+        <p>
+        Consultá el rendimiento de los equipos del torneo con una tabla clara,
+        moderna y preparada para crecer con nuevas competencias.
+        </p>
+    </div>
+    </section>
+
+    <section class="page-section">
+    <div class="container">
+        <div class="standings-toolbar">
+        <div>
+            <h2>{{ competition }}</h2>
+            <p>Primera versión visual de la tabla del torneo.</p>
+        </div>
+
+        <div class="competition-badge">
+            {{ competition }}
+        </div>
+        </div>
+
+        <div class="table-card">
+        <div class="table-scroll">
+            <table class="standings-table">
+            <thead>
+                <tr>
+                <th>Pos</th>
+                <th>Club</th>
+                <th>PJ</th>
+                <th>PG</th>
+                <th>PE</th>
+                <th>PP</th>
+                <th>Bonus</th>
+                <th>Pts</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let row of standings">
+                <td class="position-cell">{{ row.position }}</td>
+                <td class="team-cell">{{ row.team }}</td>
+                <td>{{ row.played }}</td>
+                <td>{{ row.won }}</td>
+                <td>{{ row.drawn }}</td>
+                <td>{{ row.lost }}</td>
+                <td>{{ row.bonus }}</td>
+                <td class="points-cell">{{ row.points }}</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+</section>

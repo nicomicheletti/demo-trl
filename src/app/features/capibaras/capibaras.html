@@ -1,0 +1,129 @@
+<section class="capibaras-hero">
+    <div class="container hero-grid">
+        <div class="hero-main">
+        <span class="eyebrow">Capibaras XV</span>
+        <h1>La franquicia litoraleña con identidad regional</h1>
+        <p>
+            Un espacio dedicado al plantel, staff, resultados, fixture y enlaces útiles
+            de Capibaras XV dentro del ecosistema del rugby del Litoral.
+        </p>
+        </div>
+
+        <div class="hero-logo-card">
+            <img
+                *ngIf="logoLoaded"
+                [src]="logoUrl"
+                alt="Logo de Capibaras XV"
+                class="capibaras-logo"
+                (error)="onLogoError()"
+            />
+
+            <div class="logo-fallback" *ngIf="!logoLoaded">
+                Capibaras XV
+            </div>
+            </div>
+    </div>
+    </section>
+
+    <section class="page-section">
+    <div class="container content-grid">
+
+        <article class="panel full-width">
+        <div class="panel-header">
+            <h2>Identidad</h2>
+            <span class="panel-badge">Franquicia</span>
+        </div>
+
+        <p class="panel-text">
+            Capibaras XV representa al Litoral dentro de una estructura profesional y proyecta
+            una identidad regional que une a Rosario, Santa Fe y Entre Ríos.
+        </p>
+
+        <p class="panel-text">
+            Esta sección está pensada para concentrar toda la información relevante de la franquicia:
+            plantel, staff, resultados, fixture, contenidos audiovisuales y enlaces oficiales.
+        </p>
+        </article>
+
+        <article class="panel">
+        <div class="panel-header">
+            <h2>Plantel</h2>
+            <span class="panel-badge">Jugadores</span>
+        </div>
+
+        <div class="person-list">
+            <div class="person-row" *ngFor="let player of players">
+            <strong>{{ player.name }}</strong>
+            <span>{{ player.role }}</span>
+            </div>
+        </div>
+        </article>
+
+        <article class="panel">
+        <div class="panel-header">
+            <h2>Staff</h2>
+            <span class="panel-badge">Equipo de trabajo</span>
+        </div>
+
+        <div class="person-list">
+            <div class="person-row" *ngFor="let member of staff">
+            <strong>{{ member.name }}</strong>
+            <span>{{ member.role }}</span>
+            </div>
+        </div>
+        </article>
+
+        <article class="panel">
+        <div class="panel-header">
+            <h2>Próximos partidos</h2>
+            <span class="panel-badge">Fixture</span>
+        </div>
+
+        <div class="match-list">
+            <div class="match-card" *ngFor="let match of upcomingMatches">
+            <span class="match-label">{{ match.label }}</span>
+            <h3>{{ match.rival }}</h3>
+            <p>{{ match.date }}</p>
+            <span class="match-status upcoming">{{ match.status }}</span>
+            </div>
+        </div>
+        </article>
+
+        <article class="panel">
+        <div class="panel-header">
+            <h2>Resultados recientes</h2>
+            <span class="panel-badge">Resultados</span>
+        </div>
+
+        <div class="match-list">
+            <div class="match-card" *ngFor="let match of recentResults">
+            <span class="match-label">{{ match.label }}</span>
+            <h3>{{ match.rival }}</h3>
+            <p>{{ match.date }}</p>
+            <strong class="score">{{ match.score }}</strong>
+            <span class="match-status final">{{ match.status }}</span>
+            </div>
+        </div>
+        </article>
+
+        <article class="panel full-width">
+        <div class="panel-header">
+            <h2>Enlaces útiles</h2>
+            <span class="panel-badge">Redirecciones</span>
+        </div>
+
+        <div class="links-grid">
+            <a
+            class="link-card"
+            *ngFor="let link of usefulLinks"
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+            {{ link.label }}
+            </a>
+        </div>
+        </article>
+
+    </div>
+</section>

@@ -1,0 +1,91 @@
+<section class="institutional-hero">
+    <div class="container">
+        <span class="eyebrow">Institucional</span>
+        <h1>La identidad oficial del Torneo Regional del Litoral</h1>
+        <p>
+        Historia, campeones, autoridades, uniones y reglamentos en un mismo espacio
+        para construir la base institucional del TRL.
+        </p>
+    </div>
+    </section>
+
+    <section class="page-section">
+    <div class="container institutional-grid">
+
+        <article class="panel full-width">
+        <div class="panel-header">
+            <h2>Historia del TRL</h2>
+            <span class="panel-badge">Historia</span>
+        </div>
+
+        <p class="panel-text">
+            El Torneo Regional del Litoral representa uno de los espacios competitivos más importantes
+            del rugby argentino a nivel regional. Nace de la integración de las uniones de Rosario,
+            Santa Fe y Entre Ríos, consolidando una competencia con fuerte identidad, tradición y crecimiento.
+        </p>
+
+        <p class="panel-text">
+            Su desarrollo ha permitido reunir a clubes históricos, generar rivalidades deportivas de alto nivel
+            y construir una plataforma de visibilidad para jugadores, instituciones, sponsors y toda la comunidad del rugby.
+        </p>
+        </article>
+
+        <article class="panel">
+        <div class="panel-header">
+            <h2>Campeones por año</h2>
+            <span class="panel-badge">Histórico</span>
+        </div>
+
+        <div class="simple-list">
+            <div class="simple-row" *ngFor="let item of champions">
+            <strong>{{ item.year }}</strong>
+            <span>{{ item.champion }}</span>
+            </div>
+        </div>
+        </article>
+
+        <article class="panel">
+        <div class="panel-header">
+            <h2>Autoridades</h2>
+            <span class="panel-badge">Gestión</span>
+        </div>
+
+        <div class="simple-list">
+            <div class="simple-row" *ngFor="let item of authorities">
+            <strong>{{ item.role }}</strong>
+            <span>{{ item.name }}</span>
+            </div>
+        </div>
+        </article>
+
+        <article class="panel full-width">
+        <div class="panel-header">
+            <h2>Uniones que componen el TRL</h2>
+            <span class="panel-badge">Región</span>
+        </div>
+
+        <div class="union-grid">
+            <div class="union-card" *ngFor="let union of unions">
+            <h3>{{ union.name }}</h3>
+            <p>{{ union.description }}</p>
+            </div>
+        </div>
+        </article>
+
+        <article class="panel full-width">
+        <div class="panel-header">
+            <h2>Reglamentos y documentos</h2>
+            <span class="panel-badge">Documentación</span>
+        </div>
+
+        <div class="regulations-grid">
+            <div class="regulation-card" *ngFor="let regulation of regulations">
+            <h3>{{ regulation.title }}</h3>
+            <p>{{ regulation.description }}</p>
+            <button type="button" class="doc-button">Ver documento</button>
+            </div>
+        </div>
+        </article>
+
+    </div>
+</section>

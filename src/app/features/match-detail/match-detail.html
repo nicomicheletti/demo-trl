@@ -1,0 +1,97 @@
+<section class="match-hero" *ngIf="match; else notFound">
+    <div class="container">
+        <a routerLink="/partidos" class="back-link">← Volver a partidos</a>
+
+        <div class="match-header">
+        <div>
+            <span class="eyebrow">{{ match.competition }}</span>
+            <h1>{{ match.homeTeam }} vs {{ match.awayTeam }}</h1>
+            <p>{{ match.date }} · {{ match.venue }}</p>
+        </div>
+
+        <div class="score-box">
+            <span class="status">{{ match.status }}</span>
+
+            <div class="score-line">
+            <div class="team-score">
+                <strong>{{ match.homeTeam }}</strong>
+                <span>{{ match.homeScore }}</span>
+            </div>
+
+            <div class="team-score">
+                <strong>{{ match.awayTeam }}</strong>
+                <span>{{ match.awayScore }}</span>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="page-section" *ngIf="match">
+    <div class="container">
+        <div class="detail-grid">
+        <article class="detail-card full-width">
+            <h2>Resumen</h2>
+            <p>{{ match.summary }}</p>
+        </article>
+
+        <article class="detail-card">
+            <h2>Formación local</h2>
+            <ol>
+            <li *ngFor="let player of match.homeLineup">{{ player }}</li>
+            </ol>
+        </article>
+
+        <article class="detail-card">
+            <h2>Formación visitante</h2>
+            <ol>
+            <li *ngFor="let player of match.awayLineup">{{ player }}</li>
+            </ol>
+        </article>
+
+        <article class="detail-card full-width">
+            <h2>Autores de puntos</h2>
+
+            <div *ngIf="match.scorers.length > 0; else noScorers" class="scorers-list">
+            <div class="scorer-row" *ngFor="let scorer of match.scorers">
+                <strong>{{ scorer.player }}</strong>
+                <span>{{ scorer.team }}</span>
+                <span>{{ scorer.type }}</span>
+                <span>{{ scorer.minute }}'</span>
+            </div>
+            </div>
+
+            <ng-template #noScorers>
+            <p>Todavía no hay puntos cargados para este partido.</p>
+            </ng-template>
+        </article>
+
+        <article class="detail-card full-width">
+            <h2>Incidencias</h2>
+            <ul class="incidents-list">
+            <li *ngFor="let incident of match.incidents">{{ incident }}</li>
+            </ul>
+        </article>
+
+        <article class="detail-card full-width">
+            <h2>Video resumen</h2>
+            <div class="video-box">
+            Próximamente podremos embeber aquí el resumen del partido o un video de YouTube.
+            </div>
+        </article>
+        </div>
+    </div>
+    </section>
+
+    <ng-template #notFound>
+    <section class="page-section">
+        <div class="container">
+        <div class="not-found-box">
+            <h1>Partido no encontrado</h1>
+            <p>Este detalle todavía no fue cargado en la demo.</p>
+            <a routerLink="/partidos" class="back-button">Volver al fixture</a>
+        </div>
+        </div>
+    </section>
+</ng-template>

@@ -1,0 +1,63 @@
+<section class="matches-hero">
+    <div class="container">
+        <span class="eyebrow">Fixture y resultados</span>
+        <h1>Partidos del Torneo Regional del Litoral</h1>
+        <p>
+        Consultá el calendario del Top 10 y, más adelante, también de la Segunda División,
+        con acceso a cada encuentro y su detalle.
+        </p>
+    </div>
+    </section>
+
+    <section class="page-section">
+    <div class="container">
+        <div class="toolbar">
+        <div>
+            <h2>Top 10 · Fixture 2026</h2>
+            <p>Seleccioná una fecha para ver los partidos programados.</p>
+        </div>
+        </div>
+
+        <div class="rounds-strip">
+        <button
+            type="button"
+            class="round-pill"
+            *ngFor="let round of rounds"
+            [class.active]="round === selectedRound"
+            (click)="selectRound(round)"
+        >
+            Fecha {{ round }}
+        </button>
+        </div>
+
+        <div class="matches-list" *ngIf="filteredMatches.length > 0; else noMatches">
+        <article class="match-row" *ngFor="let match of filteredMatches">
+            <div class="match-left">
+            <span class="competition-tag">{{ match.competition }}</span>
+            <h3>{{ match.homeTeam }} vs {{ match.awayTeam }}</h3>
+            <p>{{ match.date }}</p>
+            </div>
+
+            <div class="match-center">
+            <div class="team-line">
+                <span class="team-name">{{ match.homeTeam }}</span>
+                <span class="vs-box">VS</span>
+                <span class="team-name">{{ match.awayTeam }}</span>
+            </div>
+            </div>
+
+            <div class="match-right">
+            <span class="status-badge">{{ match.status }}</span>
+            <a class="detail-button" [routerLink]="['/partidos', match.id]">Ver detalle</a>
+            </div>
+        </article>
+        </div>
+
+        <ng-template #noMatches>
+        <div class="empty-box">
+            <h3>No hay partidos cargados para esta fecha todavía</h3>
+            <p>Más adelante completaremos todas las fechas del torneo.</p>
+        </div>
+        </ng-template>
+    </div>
+</section>

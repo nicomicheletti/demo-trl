@@ -1,0 +1,61 @@
+<header class="main-header">
+    <div class="container header-inner">
+
+        <div class="logo">
+        <a routerLink="/">TRL</a>
+        </div>
+
+        <nav class="nav">
+
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            Inicio
+        </a>
+
+        <a routerLink="/clubes" routerLinkActive="active">
+            Clubes
+        </a>
+
+        <div class="dropdown">
+            <span>Competencias</span>
+
+            <div class="dropdown-menu">
+            <a routerLink="/competencias">Top 10</a>
+            <a routerLink="/competencias">Segunda División</a>
+            <a routerLink="/competencias">TRL Juvenil M19</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <span>Partidos</span>
+
+            <div class="dropdown-menu">
+            <a routerLink="/partidos">Top 10</a>
+            <a routerLink="/partidos">Segunda División</a>
+            <a routerLink="/partidos">TRL Juvenil M19</a>
+            </div>
+        </div>
+
+        <a routerLink="/noticias" routerLinkActive="active">
+            Noticias
+        </a>
+
+        <div class="dropdown">
+            <span>Institucional</span>
+
+            <div class="dropdown-menu">
+            <a routerLink="/institucional">Historia</a>
+            <a routerLink="/institucional">Campeones por año</a>
+            <a routerLink="/institucional">Autoridades</a>
+            <a routerLink="/institucional">Uniones</a>
+            <a routerLink="/institucional">Reglamentos</a>
+            </div>
+        </div>
+
+        <a routerLink="/capibaras-xv" routerLinkActive="active">
+            Capibaras XV
+        </a>
+
+        </nav>
+
+    </div>
+</header>

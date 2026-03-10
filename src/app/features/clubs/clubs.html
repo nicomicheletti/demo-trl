@@ -1,0 +1,60 @@
+<section class="clubs-hero">
+    <div class="container">
+        <span class="eyebrow">Clubes del TRL</span>
+        <h1>Los clubes que le dan vida al Torneo Regional del Litoral</h1>
+        <p>
+        Explorá las instituciones que forman parte del ecosistema del TRL, desde el Top 10
+        hasta la Segunda División.
+        </p>
+    </div>
+    </section>
+
+    <section class="page-section">
+    <div class="container">
+        <div class="clubs-toolbar">
+        <div>
+            <h2>Listado de clubes</h2>
+            <p>{{ filteredClubs.length }} clubes encontrados</p>
+        </div>
+
+        <div class="search-box">
+            <input
+            type="text"
+            placeholder="Buscar por nombre, ciudad, unión o división"
+            [(ngModel)]="searchTerm"
+            />
+        </div>
+        </div>
+
+        <div class="clubs-grid" *ngIf="filteredClubs.length > 0; else emptyState">
+        <article class="club-card" *ngFor="let club of filteredClubs">
+            <div class="club-badge">
+            <span>{{ club.union }}</span>
+            </div>
+
+            <div class="club-logo">
+            {{ club.name.charAt(0) }}
+            </div>
+
+        <h3>{{ club.name }}</h3>
+
+            <ul class="club-meta">
+            <li><strong>Ciudad:</strong> {{ club.city }}</li>
+            <li><strong>Unión:</strong> {{ club.union }}</li>
+            <li><strong>División:</strong> {{ club.division }}</li>
+            </ul>
+
+            <a class="club-button" [routerLink]="['/clubes', club.slug]">
+            Ver club
+            </a>
+        </article>
+        </div>
+
+        <ng-template #emptyState>
+        <div class="empty-state">
+            <h3>No encontramos clubes con esa búsqueda</h3>
+            <p>Probá con otro nombre, ciudad o división.</p>
+        </div>
+        </ng-template>
+    </div>
+</section>

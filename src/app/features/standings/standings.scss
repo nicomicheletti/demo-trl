@@ -1,0 +1,126 @@
+.standings-hero {
+    background:
+        linear-gradient(135deg, rgba(5, 10, 24, 0.98), rgba(13, 28, 56, 0.95)),
+        radial-gradient(circle at top left, rgba(251, 191, 36, 0.16), transparent 30%);
+    color: white;
+    padding: 64px 0;
+    }
+
+    .eyebrow {
+    display: inline-block;
+    margin-bottom: 14px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #fbbf24;
+    }
+
+    .standings-hero h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 16px;
+    max-width: 800px;
+    }
+
+    .standings-hero p {
+    margin: 0;
+    max-width: 760px;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.88);
+    }
+
+    .standings-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 20px;
+    margin-bottom: 26px;
+    flex-wrap: wrap;
+    }
+
+    .standings-toolbar h2 {
+    margin: 0 0 8px;
+    color: #0f172a;
+    }
+
+    .standings-toolbar p {
+    margin: 0;
+    color: #64748b;
+    }
+
+    .competition-badge {
+    min-height: 42px;
+    padding: 0 16px;
+    border-radius: 999px;
+    background: #0f172a;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    }
+
+    .table-card {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    overflow: hidden;
+    }
+
+    .table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    }
+
+    .standings-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 760px;
+    }
+
+    .standings-table thead {
+    background: #0f172a;
+    color: white;
+    }
+
+    .standings-table th {
+    text-align: left;
+    padding: 16px 14px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    white-space: nowrap;
+    }
+
+    .standings-table td {
+    padding: 16px 14px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+    white-space: nowrap;
+    }
+
+    .standings-table tbody tr:hover {
+    background: #f8fafc;
+    }
+
+    .position-cell {
+    font-weight: 800;
+    color: #0f172a;
+    }
+
+    .team-cell {
+    font-weight: 700;
+    color: #0f172a;
+    }
+
+    .points-cell {
+    font-weight: 800;
+    color: #1d4ed8;
+    }
+
+    @media (max-width: 700px) {
+    .standings-hero {
+        padding: 54px 0;
+    }
+}

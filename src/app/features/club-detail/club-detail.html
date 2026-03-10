@@ -1,0 +1,55 @@
+<section class="club-detail-hero" *ngIf="club; else notFound">
+    <div class="container">
+        <a routerLink="/clubes" class="back-link">← Volver a clubes</a>
+
+        <div class="club-detail-header">
+        <div class="club-logo">
+            {{ club.name.charAt(0) }}
+        </div>
+
+        <div>
+            <span class="eyebrow">{{ club.division }}</span>
+            <h1>{{ club.name }}</h1>
+            <p>{{ club.description }}</p>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="page-section" *ngIf="club">
+    <div class="container">
+        <div class="detail-grid">
+        <article class="detail-card">
+            <h2>Información general</h2>
+            <ul>
+            <li><strong>Ciudad:</strong> {{ club.city }}</li>
+            <li><strong>Unión:</strong> {{ club.union }}</li>
+            <li><strong>División:</strong> {{ club.division }}</li>
+            </ul>
+        </article>
+
+        <article class="detail-card">
+            <h2>Próximos partidos</h2>
+            <p>{{ club.name }} vs Rival a definir</p>
+            <p>Sábado · 16:00 hs</p>
+        </article>
+
+        <article class="detail-card">
+            <h2>Noticias relacionadas</h2>
+            <p>Próximamente se mostrarán noticias, entrevistas y novedades del club.</p>
+        </article>
+        </div>
+    </div>
+    </section>
+
+    <ng-template #notFound>
+    <section class="page-section">
+        <div class="container">
+        <div class="not-found-box">
+            <h1>Club no encontrado</h1>
+            <p>Este club todavía no tiene ficha cargada en la demo.</p>
+            <a routerLink="/clubes" class="back-button">Volver al listado</a>
+        </div>
+        </div>
+    </section>
+</ng-template>

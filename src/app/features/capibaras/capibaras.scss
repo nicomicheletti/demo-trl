@@ -1,0 +1,235 @@
+.capibaras-hero {
+    background:
+        linear-gradient(135deg, rgba(5, 10, 24, 0.98), rgba(13, 28, 56, 0.95)),
+        radial-gradient(circle at top left, rgba(251, 191, 36, 0.16), transparent 30%);
+    color: white;
+    padding: 68px 0;
+    }
+
+    .hero-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.8fr;
+    gap: 28px;
+    align-items: center;
+    }
+
+    .eyebrow {
+    display: inline-block;
+    margin-bottom: 14px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #fbbf24;
+    }
+
+    .hero-main h1 {
+    font-size: clamp(2.2rem, 4vw, 3.8rem);
+    margin-bottom: 14px;
+    line-height: 1.06;
+    max-width: 780px;
+    }
+
+    .hero-main p {
+    margin: 0;
+    max-width: 720px;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.05rem;
+    }
+
+    .hero-logo-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 24px;
+    padding: 24px;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.18);
+    }
+
+    .capibaras-logo {
+    max-width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    display: block;
+    }
+
+    .logo-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 180px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fbbf24;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-align: center;
+    }
+
+    .content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    }
+
+    .panel {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    padding: 24px;
+    }
+
+    .full-width {
+    grid-column: 1 / -1;
+    }
+
+    .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    }
+
+    .panel-header h2 {
+    margin: 0;
+    color: #0f172a;
+    }
+
+    .panel-badge {
+    min-height: 34px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: #e2e8f0;
+    color: #334155;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.82rem;
+    }
+
+    .panel-text {
+    margin: 0 0 16px;
+    color: #475569;
+    line-height: 1.8;
+    }
+
+    .person-list,
+    .match-list {
+    display: grid;
+    gap: 12px;
+    }
+
+    .person-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e2e8f0;
+    color: #475569;
+    }
+
+    .person-row strong {
+    color: #0f172a;
+    }
+
+    .match-card {
+    border-radius: 18px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 18px;
+    }
+
+    .match-label,
+    .match-status {
+    display: inline-flex;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    }
+
+    .match-label {
+    background: #dbeafe;
+    color: #1d4ed8;
+    margin-bottom: 12px;
+    }
+
+    .match-card h3 {
+    margin: 0 0 10px;
+    color: #0f172a;
+    }
+
+    .match-card p {
+    margin: 0 0 12px;
+    color: #64748b;
+    }
+
+    .match-status.upcoming {
+    background: #fef3c7;
+    color: #92400e;
+    }
+
+    .match-status.final {
+    background: #ecfdf5;
+    color: #047857;
+    }
+
+    .score {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 1.35rem;
+    color: #0f172a;
+    }
+
+    .links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    }
+
+    .link-card {
+    min-height: 110px;
+    border-radius: 20px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #0f172a;
+    text-decoration: none;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    }
+
+    .link-card:hover {
+    background: #eef2f7;
+    }
+
+    @media (max-width: 1100px) {
+    .hero-grid,
+    .content-grid,
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
+    }
+
+    @media (max-width: 700px) {
+    .capibaras-hero {
+        padding: 54px 0;
+    }
+
+    .person-row {
+        flex-direction: column;
+        gap: 6px;
+    }
+}
